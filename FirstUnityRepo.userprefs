@@ -1,6 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Force.js">
+    <Files>
+      <File FileName="Assets\Scripts\boxdrop.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\keyPress.js" Line="8" Column="2" />
+      <File FileName="Assets\Scripts\Destroyer.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Creator.js" Line="9" Column="2" />
+      <File FileName="Assets\Scripts\Timer.js" Line="11" Column="3" />
+      <File FileName="Assets\Scripts\Move.js" Line="3" Column="25" />
+      <File FileName="Assets\Scripts\Force.js" Line="3" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
