@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{1DE1BE02-4DA7-CEB1-9FE2-B9E7DA699974}</ProjectGuid>
+	<ProjectGuid>{F8065743-06F9-3BA2-8F9F-85971A175F72}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-UnityScript</AssemblyName>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,28 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GetAxis.js" />
-     <Compile Include="Assets\Scripts\Bob.js" />
-     <Compile Include="Assets\Scripts\Creator.js" />
-     <Compile Include="Assets\Scripts\Destroyer.js" />
-     <Compile Include="Assets\Scripts\Force.js" />
-     <Compile Include="Assets\Scripts\Move.js" />
-     <Compile Include="Assets\Scripts\PlaySounds.js" />
-     <Compile Include="Assets\Scripts\Timer.js" />
-     <Compile Include="Assets\Scripts\boxdrop.js" />
-     <Compile Include="Assets\Scripts\keyPress.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\CameraRelativeControl.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FirstPersonControl.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\FollowTransform.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\Joystick.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\ObliqueNear.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\PlayerRelativeControl.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\RollABall.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\RotationConstraint.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\SidescrollControl.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\SmoothFollow2D.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\ZoomCamera.js" />
-     <Compile Include="Assets\Standard Assets (Mobile)\Scripts\tapcontrol.js" />
+     <Compile Include="Assets\Trigger.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
