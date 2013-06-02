@@ -2,16 +2,16 @@ using UnityEngine;
 using System.Collections;
 
 public class randomDirectionShot : MonoBehaviour {
+		
 	
-	public int ballspeed;
-	
-	private bool ballspeedChanged =  false;
-	private Vector3 collisionVector;
+	public int ballspeed = 1000;
 	
 	private Vector3 startPosition;
+	private int speedUpCounter;
 	
 	// Use this for initialization
 	void Start () {
+		speedUpCounter = 0;
 		startPosition = this.gameObject.transform.position;
 		forceActivation();
 	}
@@ -45,30 +45,32 @@ public class randomDirectionShot : MonoBehaviour {
 	}
 	
 	void Update() {
-		if(ballspeedChanged) {
-			
-		}
-	}
-	
-	void OnCollisionEnter(Collision theCollision){
-		
-		
-		if(theCollision.gameObject.name == "Player" ||theCollision.gameObject.name == "Enemy" ) {
-			ballspeedChanged = true;
-			
-			float difference = theCollision.gameObject.transform.position.z - this.transform.position.z;
+		speedUpCounter++;
+		if(speedUpCounter > 10 && ballspeed < 3000) {
 			Vector3 direction = this.rigidbody.velocity;
 			direction.Normalize();
-			this.rigidbody.AddForce(direction * 200);
-			ballspeed = ballspeed+200;
+			this.rigidbody.AddForce(direction * 100);
+			ballspeed += 100;
+			speedUpCounter = 0;
 		}
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.name == "BorderBehindComputer" || other.gameObject.name == "BorderBehindPlayer") {
-			resetBall();
-			forceActivation();
+		if(other.gameObject.name == "BorderBehindComputer") {
+				string formerScoreString = GameObject.Find("ScorePlayer").guiText.text;
+				int formerScore = int.Parse (formerScoreString);
+				formerScore++;
+				GameObject.Find("ScorePlayer").guiText.text = formerScore.ToString();
+				resetBall();
+				forceActivation();
 		}
-	}
-			
+		if ( other.gameObject.name == "BorderBehindPlayer") {
+				string formerScoreString = GameObject.Find("ScoreEnemy").guiText.text;
+				int formerScore = int.Parse (formerScoreString);
+				formerScore++;
+				GameObject.Find("ScoreEnemy").guiText.text = formerScore + "";
+				resetBall();
+				forceActivation();
+		}
+	}	
 }
