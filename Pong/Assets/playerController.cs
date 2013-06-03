@@ -28,8 +28,10 @@ public class playerController : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter(){
-		upcolliding = true;
-		downcolliding = true;
+	void OnTriggerEnter(Collider other){
+		if(other.name == "BorderBottomPlayerWall" || other.name == "BorderTopPlayerWall") {
+			upcolliding = true;
+			downcolliding = true;
+		}
 	}
 }

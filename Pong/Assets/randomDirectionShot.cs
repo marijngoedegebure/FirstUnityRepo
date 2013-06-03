@@ -34,13 +34,13 @@ public class randomDirectionShot : MonoBehaviour {
 		if (randomDirection == 1) {
 			Vector3 direction = new Vector3(xCoord1,yCoord,zCoord);
 			direction.Normalize();
-			rigidbody.AddForce(direction * ballspeed);
+			rigidbody.AddForce(Vector3.left * ballspeed);
 		}
 		
 		if (randomDirection == 2) {
 			Vector3 direction = new Vector3(xCoord2,yCoord,zCoord);
 			direction.Normalize();
-			rigidbody.AddForce(direction * ballspeed);
+			rigidbody.AddForce(Vector3.left * ballspeed);
 		}
 	}
 	
@@ -50,8 +50,24 @@ public class randomDirectionShot : MonoBehaviour {
 			Vector3 direction = this.rigidbody.velocity;
 			direction.Normalize();
 			this.rigidbody.AddForce(direction * 100);
-			ballspeed += 100;
+			ballspeed += 50;
 			speedUpCounter = 0;
+		}
+	}
+	
+	void OnCollisionEnter(Collision other) {
+		if(other.gameObject.name == "Player") {
+			Vector3 padposition = other.transform.position;
+			Vector3 ballposition = this.transform.position;
+			float zdifference = ballposition.z - padposition.z;
+			if(zdifference > 0) {
+				Vector3 temp = new Vector3(0,0,zdifference*200);
+				this.rigidbody.AddForce(temp);
+			}
+			else {
+				Vector3 temp = new Vector3(0,0,zdifference*200);
+				this.rigidbody.AddForce(temp);
+			}
 		}
 	}
 	
