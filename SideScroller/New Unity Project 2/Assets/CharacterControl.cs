@@ -26,23 +26,19 @@ public class CharacterControl : MonoBehaviour {
 	public GameObject meleeattack;
 	public GameObject platform;
 	
-	public GameObject inventory;
+	public Inventory inventory;
 	
 	private bool facingLeft = false;
 	private bool facingRight = true;
 	
 	// Use this for initialization
 	void Start () {
-	
+		inventory = (Inventory)GetComponent(typeof(Inventory));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*if (Input.GetKeyUp (KeyCode.Space)) {
-			jumping = false;
-		}*/
 		checkMovement();
-		
 		if(Input.GetKeyDown(KeyCode.Space) && jumping == false) {
 				this.rigidbody.AddForce(jumpForce * Vector3.up);
 				timeSinceLastJump = Time.time;
@@ -80,12 +76,12 @@ public class CharacterControl : MonoBehaviour {
 		
 		if (Input.GetKeyDown (KeyCode.A)) {
 			// Cycle through melee weapons
-			//inventory.nextMeleeWeapon();
+			inventory.nextMeleeWeapon();
 		}
 		
 		if (Input.GetKeyDown (KeyCode.S)) {
 			// Cycle through ranged weapons
-			//inventory.nextRangedWeapon();
+			inventory.nextRangedWeapon();
 		}
 		
 		// Possibilities:
@@ -123,7 +119,7 @@ public class CharacterControl : MonoBehaviour {
 			}
 		}
 	}
-	
+		
 	private void checkMovement() {
 		// Check if your allowed to move left/right (so you cannot jump against walls and stay there
 		Vector3 sphereLocForward = Vector3.zero;
@@ -133,10 +129,10 @@ public class CharacterControl : MonoBehaviour {
 		if(facingRight) {
 			sphereLocForward = new Vector3(transform.position.x+0.5f,transform.position.y,transform.position.z);
 		}
-		check (sphereLocForward);
+		checkCollision (sphereLocForward);
 	}
 	
-	private void check(Vector3 sphereLoc) {
+	private void checkCollision(Vector3 sphereLoc) {
 		Collider[] colliders = Physics.OverlapSphere(sphereLoc,0.2f);
 		bool didSomething = false;
 		for(int i = 0;i < colliders.Length;i++) {

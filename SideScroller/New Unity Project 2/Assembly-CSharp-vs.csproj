@@ -45,9 +45,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\CharacterControl.cs" />
      <Compile Include="Assets\Inventory.cs" />
      <Compile Include="Assets\MeleeAttack.cs" />
-     <Compile Include="Assets\NewScripts\CharacterControl\CharacterControl.cs" />
+     <Compile Include="Assets\PickUpScript.cs" />
      <Compile Include="Assets\PlatformScript.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
