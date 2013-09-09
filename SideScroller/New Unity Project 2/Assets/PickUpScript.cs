@@ -26,7 +26,7 @@ public class PickUpScript : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		Destroy (this.gameObject);
-		Inventory script = (Inventory) GameObject.Find("Player").GetComponent(typeof (Inventory));
+		Inventory script = (Inventory) GameObject.Find("Dude").GetComponent(typeof (Inventory));
 		if(kindOf > 3) {
 			if(kindOf-3 == 1) {
 				script.addRangedWeapon(Inventory.RangedWeapons.Bow);

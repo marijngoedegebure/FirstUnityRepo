@@ -12,12 +12,12 @@ public class CameraFollow : MonoBehaviour {
 	Vector3 formerPlayerPosition;
 	
 	void Start () {
-		formerPlayerPosition = GameObject.Find("Player").transform.position;
+		formerPlayerPosition = GameObject.Find("Dude").transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 currentPlayerPosition = GameObject.Find ("Player").transform.position;
+		Vector3 currentPlayerPosition = GameObject.Find ("Dude").transform.position;
 		Vector3 difference = currentPlayerPosition - formerPlayerPosition;
 		Vector3 newPosition = this.transform.position + difference;
 		transform.position = newPosition;

@@ -50,6 +50,7 @@
      <Compile Include="Assets\MeleeAttack.cs" />
      <Compile Include="Assets\PickUpScript.cs" />
      <Compile Include="Assets\PlatformScript.cs" />
+     <Compile Include="Assets\State.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
